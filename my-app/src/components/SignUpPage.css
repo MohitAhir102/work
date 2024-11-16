@@ -1,0 +1,88 @@
+/* Importing 'Kavoon' font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+/* Signup page container with flexbox for centering */
+.signup-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #e0f7f7, #d0e8f7); /* Gradient background */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Logo with fade-in animation */
+.logo {
+  margin-bottom: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Heading (h1) with 'Kavoon' font, text styles, and slide-in animation */
+h1 {
+  font-family: 'Kavoon', cursive;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 80px;
+  color: #0022cc;
+  margin-bottom: 50px;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 34, 0.1); /* Subtle shadow */
+  letter-spacing: 1px;
+  animation: slideIn 0.8s ease-out;
+}
+
+/* Signup button with hover effects */
+.signup-button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0022cc;
+  border: 2px solid #0022cc;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+  box-shadow: 0px 8px 15px rgba(0, 34, 204, 0.1);
+}
+
+/* Hover effect for the signup button */
+.signup-button:hover {
+  background-color: #0022cc;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0, 34, 204, 0.2);
+}
+
+/* Focus effect for accessibility */
+.signup-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px rgba(0, 34, 204, 0.5);
+}
+
+/* Keyframe for fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Keyframe for slide-in effect */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
