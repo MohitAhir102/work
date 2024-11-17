@@ -31,8 +31,8 @@
 }
 
 .close-button {
-  font-size: 24px; /* Increased font size */
-  font-weight: bold;
+  font-family: 'Kavoon', Arial, sans-serif; /* Increased font size */
+  
   color: #0054d1;
   background: none;
   border: 2px solid #0054d1; /* Optional border for better visibility */
@@ -42,7 +42,7 @@
 }
 
 .Next-button {
-  font-size: 24px; /* Increased font size */
+  font-family: 'Kavoon', Arial, sans-serif; /* Increased font size */
   font-weight: bold;
   color: #0054d1;
   background: none;

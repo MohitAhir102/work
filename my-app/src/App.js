@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import SignUpPage from "./components/SignUpPage";
+import SignUpPage from "./components/Login_page/SignUpPage";
 import Leaderboard from "./components/Leaderboard/Leaderboard";
 import Desk from "./components/Destop 2/Desk";
 

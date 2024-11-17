@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
 /* General styles for body */
 body {
     margin: 0;
@@ -9,10 +11,10 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh; /* Full screen height */
-  }
-  
-  /* Wrapper for content area */
-  .content-wrapper {
+}
+
+/* Wrapper for content area */
+.content-wrapper {
     background-color: #2822d6; /* Blue background for the content */
     border-radius: 20px;
     padding: 20px;
@@ -20,53 +22,52 @@ body {
     max-width: 400px; /* Centered content width */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-  }
-  
-  /* Title styling */
-  .heading {
+}
+
+/* Title styling */
+.heading {
     font-size: 24px;
     margin-bottom: 20px;
-  }
-  
-  /* Card styles */
-  .card {
+}
+
+/* Card styles */
+.card {
     background-color: #ffffff;
     color: #2822d6;
     border-radius: 10px;
     padding: 15px 20px;
     margin-bottom: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .card h2, .card h3 {
+}
+
+.card h2, .card h3 {
     margin: 0;
     font-size: 20px;
-  }
-  
-  .card p {
+}
+
+.card p {
     margin: 5px 0 10px;
     font-size: 18px;
-  }
-  
-  /* Engagement stats */
-  .engagement-stats {
+}
+
+/* Engagement stats */
+.engagement-stats {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
-  }
-  
-  .engagement-stats div {
+}
+
+.engagement-stats div {
     text-align: center;
     width: 25%; /* Equal width for all items */
-  }
-  
-  .engagement-stats h4 {
+}
+
+.engagement-stats h4 {
     margin: 0;
     font-size: 16px;
-  }
-  
-  .engagement-stats p {
+}
+
+.engagement-stats p {
     margin: 5px 0;
     font-size: 18px;
-  }
-  
+}

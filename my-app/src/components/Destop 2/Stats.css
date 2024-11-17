@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Inter", sans-serif;
+  font-family: "Kavoon", cursive;
   background-color: #d6f3f7;
 }
 
@@ -40,7 +40,7 @@ body {
 .coming-soon {
   text-align: center;
   margin-top: 16px;
-  font-family: "Kavoon", cursive;
+  font-family: "Inter", sans-serif;
   color: #2822D6;
 }
 
@@ -52,14 +52,14 @@ body {
   color: #2822D6;
   border-radius: 4px;
   cursor: pointer;
-  font-family: "Inter", sans-serif;
+  font-family: "Kavoon", cursive;
   font-weight: bold;
 }
 
 .gvv-quests {
   margin-top: 20px;
   text-align: center;
-  font-family: "Kavoon", cursive;
+  font-family: "Inter", sans-serif;
 }
 
 .quest-list {
@@ -73,6 +73,6 @@ body {
   padding: 8px;
   border: 1px solid #2822D6;
   color: #2822D6;
-  font-family: "Inter", sans-serif;
+  font-family: "Kavoon", cursive;
   border-radius: 4px;
 }
