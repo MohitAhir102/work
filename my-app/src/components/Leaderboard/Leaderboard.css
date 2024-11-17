@@ -1,7 +1,6 @@
-/* Import Kavoon Font */
 @import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
 
-/* General Styles for Leaderboard */
+/* Styles for Leaderboard Container */
 .leaderboard {
   width: 400px;
   margin: 20px auto;
@@ -9,14 +8,14 @@
   background-color: #e5f4ff;
   border: 2px solid #0054d1;
   border-radius: 10px;
-  font-family: 'Kavoon', Arial, sans-serif; /* Apply Kavoon font */
+  font-family: 'Kavoon', Arial, sans-serif;
   color: #0054d1;
   text-align: left;
   position: relative;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Section */
+
 .leaderboard-header {
   display: flex;
   justify-content: space-between;
@@ -27,49 +26,37 @@
   font-size: 20px;
   margin: 0;
   font-weight: bold;
-  font-family: 'Kavoon', Arial, sans-serif; /* Apply Kavoon font */
 }
 
-.close-button {
-  font-family: 'Kavoon', Arial, sans-serif; /* Increased font size */
-  
+
+.close-button, .Next-button {
+  font-family: 'Kavoon', Arial, sans-serif;
   color: #0054d1;
   background: none;
-  border: 2px solid #0054d1; /* Optional border for better visibility */
-  padding: 12px 24px; /* Added padding for size */
+  border: 2px solid #0054d1;
+  padding: 12px 24px;
   cursor: pointer;
   display: inline-block;
 }
 
-.Next-button {
-  font-family: 'Kavoon', Arial, sans-serif; /* Increased font size */
-  font-weight: bold;
-  color: #0054d1;
-  background: none;
-  border: 2px solid #0054d1; /* Optional border for better visibility */
-  padding: 12px 24px; /* Added padding for size */
-  cursor: pointer;
-  display: inline-block; /* Ensures block-like sizing without breaking layout */
 
-  /* Centering */
+.Next-button {
+  font-weight: bold;
   position: absolute;
-  top: 115%;
+  top: 108%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-
-/* Section Titles ("You" and "Top 200") */
+/* Titles */
 .section-title {
   font-size: 18px;
   font-weight: bold;
   margin: 15px 0 10px;
-  text-align: left;
   color: #0054d1;
-  font-family: 'Kavoon', Arial, sans-serif; /* Apply Kavoon font */
 }
 
-/* User Section */
+/* User Section_Styl */
 .user-section {
   display: flex;
   justify-content: space-between;
@@ -85,19 +72,18 @@
 .user-score {
   font-size: 16px;
   font-weight: bold;
-  font-family: 'Kavoon', Arial, sans-serif; /* Apply Kavoon font */
 }
 
-/* Top 200 Section */
+/*  200 Section Styling */
 .top200 {
-  max-height: 300px; /* Limit height to make it scrollable */
+  max-height: 300px;
   overflow-y: auto;
   background-color: #fff;
   border: 1px solid #cce7ff;
   border-radius: 5px;
 }
 
-/* Scrollable Entries */
+/* Scrollable Entri*/
 .entry {
   display: flex;
   justify-content: space-between;
@@ -114,10 +100,9 @@
 .entry-handle,
 .entry-score {
   font-size: 14px;
-  font-family: 'Kavoon', Arial, sans-serif; /* Apply Kavoon font */
 }
 
-/* Scrollbar Styling */
+/* Scrollbar Styl */
 .top200::-webkit-scrollbar {
   width: 6px;
 }

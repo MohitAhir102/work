@@ -1,15 +1,21 @@
 import React from "react";
 import "./Stats.css";
+import profileImage from "../../assets/icons/profile.png";
 
 const App = () => {
   return (
     <div className="leaderboard-container">
       <div className="header">
-        <p>@twitter_handle</p>
-        <p>View Full Leaderboard</p>
+        <div className="gvv-title">
+          <h4 className="m-0">GVV Leaderboard Rank</h4>
+          <p className="m-0">@twitter_handle</p>
+          <p className="m-0">View Full Leaderboard</p>
+        </div>
         <div className="gvv-score">
           <p>40000 GVV</p>
-          <div className="profile-icon"></div>
+          <div className="profile-icon">
+            <img src={profileImage} alt="profile" />
+          </div>
         </div>
       </div>
       <div className="coming-soon">
@@ -27,13 +33,34 @@ const App = () => {
       <div className="gvv-quests">
         <h3>GVV QUESTS</h3>
         <div className="quest-list">
-          <div className="quest-item">400 $GVV - Download and Read Whitepaper</div>
-          <div className="quest-item">400 $GVV - Follow GVV on X</div>
-          <div className="quest-item">400 $GVV - Watch Pitch Video</div>
-          <div className="quest-item">400 $GVV - Join Discord Server</div>
-          <div className="quest-item">400 $GVV - Like @Influencer’s GVV Post</div>
-          <div className="quest-item">400 $GVV - Comment on @Influencer’s GVV Posts</div>
-          <div className="quest-item">400 $GVV - Follow @Influencer’s Account</div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Download and Read Whitepaper</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Follow GVV on X</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Watch Pitch Video</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Join Discord Server</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Like @Influencer’s GVV Post</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Comment on @Influencer’s GVV Posts</div>
+          </div>
+          <div className="quest-item">
+            <div className="price">400 $GVV</div>
+            <div className="desc">Follow @Influencer’s Account</div>
+          </div>
         </div>
       </div>
     </div>
@@ -41,4 +68,3 @@ const App = () => {
 };
 
 export default App;
-
