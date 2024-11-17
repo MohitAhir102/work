@@ -13,8 +13,21 @@ const Leaderboard = () => {
       { rank: 4, handle: "@twitterhandle", score: "67k CVV" },
       { rank: 5, handle: "@twitterhandle", score: "64k CVV" },
       { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
+      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
     ],
   };
+
 
   // State for leaderboard data
   const [leaderboard, setLeaderboard] = useState(demoData);
@@ -67,7 +80,11 @@ const Leaderboard = () => {
           </div>
         ))}
       </div>
+      <button className="close-button" onClick={() => navigate("/Destop")}>
+          Next
+        </button>
     </div>
+    
   );
 };
 

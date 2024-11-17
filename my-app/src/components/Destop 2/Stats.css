@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kavoon&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #d6f3f7;
+}
+
+.leaderboard-container {
+  width: 360px;
+  margin: 20px auto;
+  border: 2px solid #2822D6;
+  border-radius: 8px;
+  background-color: #ebf6ff;
+  padding: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2822D6;
+  font-size: 14px;
+}
+
+.gvv-score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #2822D6;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.coming-soon {
+  text-align: center;
+  margin-top: 16px;
+  font-family: "Kavoon", cursive;
+  color: #2822D6;
+}
+
+.read-more-btn {
+  margin-top: 12px;
+  padding: 8px 16px;
+  background-color: #ffffff;
+  border: 2px solid #2822D6;
+  color: #2822D6;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+.gvv-quests {
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Kavoon", cursive;
+}
+
+.quest-list {
+  margin-top: 12px;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.quest-item {
+  margin: 8px 0;
+  padding: 8px;
+  border: 1px solid #2822D6;
+  color: #2822D6;
+  font-family: "Inter", sans-serif;
+  border-radius: 4px;
+}
