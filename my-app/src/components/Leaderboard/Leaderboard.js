@@ -80,7 +80,7 @@ const Leaderboard = () => {
           </div>
         ))}
       </div>
-      <button className="close-button" onClick={() => navigate("/Destop")}>
+      <button className="Next-button" onClick={() => navigate("/Destop")}>
           Next
         </button>
     </div>
