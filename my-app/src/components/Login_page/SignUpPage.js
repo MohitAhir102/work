@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
+  TWITTER_API_KEY,
+  REDIRECT_URI,
   TWITTER_API_CLIENT_ID,
   TWITTER_API_SECRET,
 } from "../../components/config/config"; // Import API credentials
@@ -21,19 +23,20 @@ function SignUpPage() {
 
   const handleTwitterLogin = async () => {
     try {
-      const CallbackUrl = "https://venerable-chebakia-81454a.netlify.app";
-      // On success, navigate to the leaderboard
+      navigate("/leaderboard")
+      // const CallbackUrl = "http://localhost:3000";
+      // // On success, navigate to the leaderboard
 
-      const twitterAuthUrl =
-        "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
-        TWITTER_API_CLIENT_ID +
-        "&redirect_uri=" +
-        CallbackUrl + // URL encode the callback URL
-        "&state=state&scope=tweet.read%20users.read%20follows.read%20offline.access" +
-        "&code_challenge=challenge&code_challenge_method=plain";
+      // const twitterAuthUrl =
+      //   "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
+      //   TWITTER_API_CLIENT_ID +
+      //   "&redirect_uri=" +
+      //   CallbackUrl + // URL encode the callback URL
+      //   "&state=state&scope=tweet.read%20users.read%20follows.read%20offline.access" +
+      //   "&code_challenge=challenge&code_challenge_method=plain";
 
-      // Redirect the user to the Twitter OAuth URL
-      window.location.href = twitterAuthUrl;
+      // // Redirect the user to the Twitter OAuth URL
+      // window.location.href = twitterAuthUrl;
       // navigate(
       //   "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
       //     process.env.TWITTER_API_CLIENT_ID +
@@ -60,7 +63,7 @@ function SignUpPage() {
   const fetchAccessToken = async (code) => {
     const clientId = TWITTER_API_CLIENT_ID;
     const clientSecret = TWITTER_API_SECRET; // Store secret securely!
-    const redirectUri = "https://venerable-chebakia-81454a.netlify.app"; // Your callback URL
+    const redirectUri = "http://localhost:3000"; // Your callback URL
 
     try {
       // Make a request to exchange the code for an access token
@@ -100,8 +103,8 @@ function SignUpPage() {
           Authorization: `Bearer ${accessToken}`,
         },
       });
-      navigate("/leaderboard");
       console.log("User Details:", response.data);
+      navigate("/leaderboard");
     } catch (error) {
       console.error("Failed to fetch user details:", error);
     }

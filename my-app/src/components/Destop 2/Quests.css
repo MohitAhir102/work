@@ -80,11 +80,14 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .engagement-stats div {
   text-align: center;
-  width: 30%; /* Adjust to have better spacing */
+  /* width: 30%;
+  min-width: 50px; */
+   /* Adjust to have better spacing */
 }
 
 .card-state {
