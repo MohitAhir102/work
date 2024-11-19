@@ -23,7 +23,7 @@ function SignUpPage() {
 
   const handleTwitterLogin = async () => {
     try {
-      const CallbackUrl = "http://localhost:3000";
+      const CallbackUrl = "https://venerable-chebakia-81454a.netlify.app";
       // On success, navigate to the leaderboard
 
       const twitterAuthUrl =
@@ -62,7 +62,7 @@ function SignUpPage() {
   const fetchAccessToken = async (code) => {
     const clientId = TWITTER_API_CLIENT_ID;
     const clientSecret = TWITTER_API_SECRET; // Store secret securely!
-    const redirectUri = "http://localhost:3000"; // Your callback URL
+    const redirectUri = "https://venerable-chebakia-81454a.netlify.app"; // Your callback URL
 
     try {
       // Make a request to exchange the code for an access token
