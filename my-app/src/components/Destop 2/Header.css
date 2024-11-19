@@ -2,21 +2,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Kavoon&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Kavoon&display=swap");
 
+
 /* General Styles */
 body {
   margin: 0;
-  font-family: "Kavoon", Arial, sans-serif; /* Apply Kavoon font */
+  font-family: "Kavoon", Arial, sans-serif;
   background-color: #f0f8ff;
 }
 
+/* Dashboard Container */
 .dashboard-container {
-  max-width: auto;
+  max-width: 100%; /* Full width by default */
   margin: 20px auto;
   padding: 20px;
   border: 2px solid #a4a4a4;
   border-radius: 10px;
   background-color: #ebf6ff;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 /* Flexbox for Center Alignment */
@@ -29,7 +32,9 @@ body {
 
 .profile-section .twitter-name {
   font-family: "Kavoon";
-  font-size: 12px ;
+  font-size: 16px;
+  word-wrap: break-word; /* Ensure long names break nicely */
+  text-align: center;
 }
 
 /* Section Styles */
@@ -39,9 +44,10 @@ body {
   border: 2px dashed #a4a4a4;
   border-radius: 8px;
   text-align: center;
+  box-sizing: border-box;
 }
 
-/* Responsive Button and Input Containers */
+/* Buttons and Input Containers */
 .invite-buttons,
 .engage-buttons,
 .wallet-buttons {
@@ -59,7 +65,8 @@ body {
   text-align: center;
   border-radius: 5px;
   color: black;
-  font-family: "Inter";
+  font-family: "Inter", Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 /* Buttons */
@@ -72,6 +79,8 @@ body {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
+  text-align: center;
+  font-size: 14px;
 }
 
 .button:hover,
@@ -94,66 +103,85 @@ body {
   padding: 10px;
   background-color: #e0e0e0;
   border-radius: 5px;
-  text-align: center; /* Centers the image horizontally */
+  text-align: center;
 }
 
 .post-placeholder img {
-  width: 100%; /* Makes the image responsive to the container width */
-  max-width: 500px; /* Sets a max width for the image */
-  height: auto; /* Maintains the aspect ratio of the image */
+  width: 100%;
+  max-width: 500px; /* Ensures it doesn’t exceed layout width */
+  height: auto;
 }
 
 /* Typography */
 h2,
 h3 {
   margin: 0;
-  font-family: "Kavoon", sans-serif; /* Apply Kavoon font to h2 and h3 */
+  font-family: "Kavoon", sans-serif;
   color: #333;
 }
 
 p {
   margin: 5px 0;
-  font-family: "Inter", Arial, sans-serif; /* Apply Kavoon font to paragraphs */
+  font-family: "Inter", Arial, sans-serif;
   color: #555;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries */
+
+/* Tablet Screens (768px and below) */
 @media (max-width: 768px) {
   .dashboard-container {
     padding: 15px;
+    width: 90%; /* Constrain the layout width */
   }
 
   .invite-buttons input {
-    width: 100%;
+    width: 100%; /* Input fields fill the available space */
   }
 
   .invite-buttons,
   .engage-buttons,
   .wallet-buttons {
     flex-direction: column;
+    gap: 10px; /* Add spacing between buttons */
   }
 
   .button,
   .referral-button {
-    width: 100%;
+    width: 100%; /* Buttons take full width */
+    text-align: center;
+  }
+
+  .profile-section .twitter-name {
+    font-size: 14px;
   }
 }
 
+/* Mobile Screens (480px and below) */
 @media (max-width: 480px) {
+  .dashboard-container {
+    padding: 10px;
+    width: 95%;
+  }
+
   .profile-icon img {
-    width: 60px;
+    width: 60px; /* Adjusts icon size for small screens */
     height: 60px;
   }
 
   h2 {
-    font-size: 1.5em;
-  }
-
-  h3 {
     font-size: 1.2em;
   }
 
+  h3 {
+    font-size: 1em;
+  }
+
   p {
-    font-size: 0.9em;
+    font-size: 0.85em;
+  }
+
+  .referral-button {
+    padding: 8px 10px;
   }
 }
