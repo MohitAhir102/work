@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { useNavigate, useLocation } from "react-router-dom"; // Import useLocation for query params
 import "./Leaderboard.css";
 
 const Leaderboard = () => {
@@ -13,44 +13,30 @@ const Leaderboard = () => {
       { rank: 4, handle: "@twitterhandle", score: "67k CVV" },
       { rank: 5, handle: "@twitterhandle", score: "64k CVV" },
       { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
-      { rank: 6, handle: "@twitterhandle", score: "60k CVV" },
     ],
   };
-
 
   // State for leaderboard data
   const [leaderboard, setLeaderboard] = useState(demoData);
 
+  // State for Twitter token (optional, for future API calls)
+  const [twitterToken, setTwitterToken] = useState(null);
+
   // Hook for navigation
   const navigate = useNavigate();
 
-  // Placeholder for API call (future integration)
-  /*
-  useEffect(() => {
-    const fetchLeaderboardData = async () => {
-      try {
-        const response = await fetch("https://api.example.com/leaderboard");
-        const data = await response.json();
-        setLeaderboard(data);
-      } catch (error) {
-        console.error("Error fetching leaderboard data:", error);
-      }
-    };
+  // Hook for location to capture query params
+  const location = useLocation();
 
-    fetchLeaderboardData();
-  }, []);
-  */
+  // Extract Twitter login response from query parameters
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const token = params.get("access_token");
+    if (token) {
+      setTwitterToken(token);
+      console.log("Twitter Access Token:", token);
+    }
+  }, [location]);
 
   return (
     <div className="leaderboard">
@@ -60,6 +46,14 @@ const Leaderboard = () => {
           Back
         </button>
       </div>
+
+      {/* Display Twitter token if available */}
+      {twitterToken && (
+        <div className="twitter-token">
+          <p>Logged in via Twitter!</p>
+          <p>Access Token: {twitterToken}</p>
+        </div>
+      )}
 
       {/* "You" Section */}
       <div className="section-title">You</div>
@@ -80,11 +74,11 @@ const Leaderboard = () => {
           </div>
         ))}
       </div>
+
       <button className="Next-button" onClick={() => navigate("/Destop")}>
-          Next
-        </button>
+        Next
+      </button>
     </div>
-    
   );
 };
 
