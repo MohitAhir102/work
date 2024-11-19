@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
-  TWITTER_API_KEY,
-  REDIRECT_URI,
   TWITTER_API_CLIENT_ID,
   TWITTER_API_SECRET,
 } from "../../components/config/config"; // Import API credentials
