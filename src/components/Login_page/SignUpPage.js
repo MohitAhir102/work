@@ -5,6 +5,7 @@ import {
   REDIRECT_URI,
   TWITTER_API_CLIENT_ID,
   TWITTER_API_SECRET,
+  client_secret,
 } from "../../components/config/config"; // Import API credentials
 // import { useOAuth } from "react-oauth"; // Import OAuth library
 
@@ -64,7 +65,7 @@ function SignUpPage() {
 
   const fetchAccessToken = async (code) => {
     const clientId = TWITTER_API_CLIENT_ID;
-    const clientSecret = TWITTER_API_SECRET; // Store secret securely!
+    const clientSecret = client_secret; // Store secret securely!
     const redirectUri = "https://work-three-tan.vercel.app"; // Your callback URL
 
     try {
