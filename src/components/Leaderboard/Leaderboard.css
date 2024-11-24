@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+/* Styles for Leaderboard Container */
+.leaderboard {
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #e5f4ff;
+  border: 2px solid #0054d1;
+  border-radius: 10px;
+  font-family: 'Kavoon', Arial, sans-serif;
+  color: #0054d1;
+  text-align: left;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.leaderboard-header h2 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: bold;
+}
+
+
+.close-button, .Next-button {
+  font-family: 'Kavoon', Arial, sans-serif;
+  color: #0054d1;
+  background: none;
+  border: 2px solid #0054d1;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+
+.Next-button {
+  font-weight: bold;
+  position: absolute;
+  top: 108%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Titles */
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 10px;
+  color: #0054d1;
+}
+
+/* User Section_Styl */
+.user-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #cce7ff;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #0054d1;
+}
+
+.user-rank,
+.user-handle,
+.user-score {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*  200 Section Styling */
+.top200 {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid #cce7ff;
+  border-radius: 5px;
+}
+
+/* Scrollable Entri*/
+.entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #cce7ff;
+}
+
+.entry:last-child {
+  border-bottom: none;
+}
+
+.entry-rank,
+.entry-handle,
+.entry-score {
+  font-size: 14px;
+}
+
+/* Scrollbar Styl */
+.top200::-webkit-scrollbar {
+  width: 6px;
+}
+
+.top200::-webkit-scrollbar-thumb {
+  background-color: #0054d1;
+  border-radius: 5px;
+}
