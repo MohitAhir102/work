@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
 import {
   TWITTER_API_KEY,
   REDIRECT_URI,
@@ -23,20 +22,23 @@ function SignUpPage() {
 
   const handleTwitterLogin = async () => {
     try {
-      navigate("/leaderboard")
+      const CallbackUrl = "http://localhost:3000";
+      // navigate("/leaderboard")
       // const CallbackUrl = "http://localhost:3000";
       // // On success, navigate to the leaderboard
 
-      // const twitterAuthUrl =
-      //   "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
-      //   TWITTER_API_CLIENT_ID +
-      //   "&redirect_uri=" +
-      //   CallbackUrl + // URL encode the callback URL
-      //   "&state=state&scope=tweet.read%20users.read%20follows.read%20offline.access" +
-      //   "&code_challenge=challenge&code_challenge_method=plain";
+      // On success, navigate to the leaderboard
 
-      // // Redirect the user to the Twitter OAuth URL
-      // window.location.href = twitterAuthUrl;
+      const twitterAuthUrl =
+        "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
+        TWITTER_API_CLIENT_ID +
+        "&redirect_uri=" +
+        CallbackUrl + // URL encode the callback URL
+        "&state=state&scope=tweet.read%20users.read%20follows.read%20offline.access" +
+        "&code_challenge=challenge&code_challenge_method=plain";
+
+      // Redirect the user to the Twitter OAuth URL
+      window.location.href = twitterAuthUrl;
       // navigate(
       //   "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
       //     process.env.TWITTER_API_CLIENT_ID +
@@ -85,7 +87,6 @@ function SignUpPage() {
       );
 
       const accessToken = response.data.access_token;
-
       if (accessToken) {
         // Fetch user details using the access token
         fetchUserDetails(accessToken);
@@ -121,5 +122,4 @@ function SignUpPage() {
     </div>
   );
 }
-
 export default SignUpPage;
