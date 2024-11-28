@@ -33,10 +33,20 @@ const App = () => {
       <div className="gvv-quests">
         <h3>GVV QUESTS</h3>
         <div className="quest-list">
+          {/* Updated Link for Download and Read Whitepaper */}
           <div className="quest-item">
             <div className="price">400 $GVV</div>
-            <div className="desc">Download and Read Whitepaper</div>
+            <a 
+              href="https://gvvtoken.com/assets/files/GVV%20Whitepaper%20-%20Draft.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <div className="desc">Download and Read Whitepaper</div>
+            </a>
           </div>
+
+          {/* Other Quest Items */}
           <div className="quest-item">
             <div className="price">400 $GVV</div>
             <div className="desc">Follow GVV on X</div>

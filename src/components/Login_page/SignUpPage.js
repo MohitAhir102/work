@@ -7,46 +7,29 @@ import {
   TWITTER_API_SECRET,
   client_secret,
 } from "../../components/config/config"; // Import API credentials
-// import { useOAuth } from "react-oauth"; // Import OAuth library
+import axios from "axios";
 
 import "./SignUpPage.css";
-import axios from "axios";
 
 function SignUpPage() {
   const navigate = useNavigate();
 
-  // const twitterLogin = useOAuth({
-  //   provider: "twitter",
-  //   clientId: TWITTER_API_KEY,
-  //   redirectUri: REDIRECT_URI,
-  // });
-
+  // Function to handle Twitter OAuth login
+  /*
   const handleTwitterLogin = async () => {
     try {
-      const CallbackUrl = "https://work-three-tan.vercel.app";
-      // navigate("/leaderboard")
-      // const CallbackUrl = "http://https://work-three-tan.vercel.app0";
-      // // On success, navigate to the leaderboard
-
-      // On success, navigate to the leaderboard
+      const CallbackUrl = "http://localhost:3000";
 
       const twitterAuthUrl =
         "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
         TWITTER_API_CLIENT_ID +
         "&redirect_uri=" +
-        CallbackUrl + // URL encode the callback URL
+        encodeURIComponent(CallbackUrl) + // URL encode the callback URL
         "&state=state&scope=tweet.read%20users.read%20follows.read%20offline.access" +
         "&code_challenge=challenge&code_challenge_method=plain";
 
       // Redirect the user to the Twitter OAuth URL
       window.location.href = twitterAuthUrl;
-      // navigate(
-      //   "https://twitter.com/i/oauth2/authorize?response_type=code&client_id=" +
-      //     process.env.TWITTER_API_CLIENT_ID +
-      //     "&redirect_uri=" +
-      //     CallbackUrl +
-      //     "&state=state&scope=tweet.read%20users.read$20follows.read%20offLine.access&code_challenge=challenge&code_challenge_method=plain"
-      // );
     } catch (error) {
       console.error("Twitter login failed:", error);
     }
@@ -66,23 +49,28 @@ function SignUpPage() {
   const fetchAccessToken = async (code) => {
     const clientId = TWITTER_API_CLIENT_ID;
     const clientSecret = client_secret; // Store secret securely!
-    const redirectUri = "https://work-three-tan.vercel.app"; // Your callback URL
+    const redirectUri = "http://localhost:3000"; // Your callback URL
 
     try {
+      // Encode clientId and clientSecret into Base64
+      const plainText = `${clientId}:${clientSecret}`;
+      const base64EncodedCredentials = btoa(plainText);
+
       // Make a request to exchange the code for an access token
       const response = await axios.post(
-        "https://api.twitter.com/2/oauth2/token",
+        "https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/oauth2/token",
         new URLSearchParams({
           client_id: clientId,
           client_secret: clientSecret,
-          code,
+          code: code,
+          code_verifier: "challenge", // Ensure the verifier matches your setup
           redirect_uri: redirectUri,
           grant_type: "authorization_code",
         }).toString(),
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            "Access-Control-Allow-Origin": "*",
+            Authorization: `Basic ${base64EncodedCredentials}`,
           },
         }
       );
@@ -111,16 +99,110 @@ function SignUpPage() {
       console.error("Failed to fetch user details:", error);
     }
   };
+  */
+
+  // Function to handle static login
+  const handleStaticLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    if (email === "GVV@gmail.com" && password === "GVV@9090") {
+
+      navigate("/leaderboard");
+    } else {
+      alert("Invalid Email or Password");
+    }
+  };
+
   return (
-    <div className="signup-page">
-      <div className="logo">
-        <img src="/Logo.png" alt="Logo" />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        background: "#f4f4f9",
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
+      <div style={{ marginBottom: "20px" }}>
+        <img src="/Logo.png" alt="Logo" style={{ width: "150px" }} />
       </div>
-      <h1>CVV Token is a digital asset and equity share</h1>
-      <button className="signup-button" onClick={handleTwitterLogin}>
-        Sign up with X Account
-      </button>
+      <h1
+        style={{
+          color: "#333",
+          marginBottom: "30px",
+          textAlign: "center",
+          fontSize: "1.5rem",
+        }}
+      >
+        CVV Token is a digital asset and equity share
+      </h1>
+      <form
+        onSubmit={handleStaticLogin}
+        style={{
+          background: "#ffffff",
+          padding: "20px 30px",
+          borderRadius: "10px",
+          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%",
+          maxWidth: "400px",
+        }}
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          style={{
+            width: "100%",
+            padding: "10px",
+            margin: "10px 0",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          style={{
+            width: "100%",
+            padding: "10px",
+            margin: "10px 0",
+            border: "1px solid #ccc",
+            borderRadius: "5px",
+            fontSize: "1rem",
+          }}
+        />
+        <button
+          type="submit"
+          style={{
+            width: "100%",
+            padding: "10px",
+            background: "#007bff",
+            color: "#fff",
+            fontSize: "1rem",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            transition: "background 0.3s",
+          }}
+          onMouseEnter={(e) => (e.target.style.background = "#0056b3")}
+          onMouseLeave={(e) => (e.target.style.background = "#007bff")}
+        >
+          Login
+        </button>
+      </form>
     </div>
   );
 }
+
 export default SignUpPage;
